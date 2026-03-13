@@ -1,16 +1,21 @@
 # 后端框架
 fastapi==0.115.0
 uvicorn==0.30.6
-python-multipart==0.0.12
-python-dotenv==1.0.1
-# RAG核⼼依赖
+# 向量数据库
 chromadb==0.5.15
-fastembed==0.3.6
+# RAG相关工具链
 langchain==0.3.0
 langchain-community==0.3.0
 langchain-text-splitters==0.3.0
-# ⼤模型API依赖
-requests==2.32.3
-cohere==5.11.0
+langchain-huggingface==0.1.0  # 恢复原版本
+# 嵌入模型（升级到兼容版本）
+fastembed==0.3.1
+# 接口与文件处理
+python-multipart==0.0.12
+python-dotenv==1.0.1
 # 前端框架
 streamlit==1.38.0
+# 网络请求
+requests==2.32.3
+# 重排序优化
+cohere==5.11.0
