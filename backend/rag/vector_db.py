@@ -2,7 +2,6 @@ from fastembed import TextEmbedding
 from chromadb import PersistentClient
 from dotenv import load_dotenv
 import os
-import sys
 # 兼容本地和部署环境的路径，优先加载项⽬根⽬录的.env⽂件
 project_root = 
 os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
