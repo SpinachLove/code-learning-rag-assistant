@@ -101,8 +101,8 @@ async def rag_qa(request: RagQARequest):
 # 启动后端服务
 if __name__ == "__main__":
     import uvicorn
-    # 从环境变量读取配置，默认0.0.0.0:8000
+    # 从环境变量读取配置，默认0.0.0.0:7680
     import os
     host = os.getenv("HOST", "0.0.0.0")
-    port = int(os.getenv("PORT", 8000))
+    port = int(os.getenv("PORT", 7680))
     uvicorn.run(app, host=host, port=port)
