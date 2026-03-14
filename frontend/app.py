@@ -5,13 +5,12 @@ import requests
 st.set_page_config(
     page_title="代码学习智能审查助手",   #页面标题
     page_icon="💻",
-    layout="wide"
+    layout="wide"         #启用宽屏模式
 )
 
 # 后端接口地址，本地开发用这个，部署后替换成线上地址
-# BACKEND_BASE_URL = "http://127.0.0.1:8000"  #后端接口地址
-BACKEND_BASE_URL = "https://SpinachLove-code-rag-assistant.hf.space"
-
+#BACKEND_BASE_URL = "http://127.0.0.1:7860"  #本地用后端接口地址
+BACKEND_BASE_URL = "https://SpinachLove-code-rag-assistant.hf.space"    #线上后端接口地址
 # 页面标题
 st.title("💻 代码学习智能审查助手")
 st.caption("基于RAG与大模型的编程答疑系统 | 代码智能分析 · 编程问题答疑")

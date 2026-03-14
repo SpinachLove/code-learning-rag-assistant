@@ -1,3 +1,9 @@
+# ========== 【新增】修复模块路径问题，必须放在文件最开头 ==========
+import sys
+import os
+# 把当前main.py所在的backend目录，加入Python的模块搜索路径
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# ==============================================================
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -42,7 +48,7 @@ class RagQARequest(BaseModel):
     code_context: str = ""
 
 # 健康检查接口：用来测试后端服务是否正常启动
-@app.get("/", tags=["健康检查"])
+@app.get("/", tags=["健康检查"])            #定义了一个 FastAPI 的 GET 接口
 async def health_check():
     return {
         "status": "ok",
@@ -101,8 +107,8 @@ async def rag_qa(request: RagQARequest):
 # 启动后端服务
 if __name__ == "__main__":
     import uvicorn
-    # 从环境变量读取配置，默认0.0.0.0:7680
+    # 从环境变量读取配置，默认0.0.0.0:7860
     import os
     host = os.getenv("HOST", "0.0.0.0")
-    port = int(os.getenv("PORT", 7860))
+    port = int(os.getenv("PORT", 7860))   #8000
     uvicorn.run(app, host=host, port=port)
